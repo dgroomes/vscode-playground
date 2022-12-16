@@ -60,7 +60,7 @@ Follow these instructions to get up and running with this project.
      ```
 
 
-## Observations about Visual Studio Code
+## Observations about Visual Studio Code (and Codespaces)
 
 * I like VS Code's "launch configurations" (an analog to Intellij's "run configurations") for two reasons. 1) they are
   defined in JSON (and ostensibly I should version control them in Git?) and 2) they simply kick off a command in the
@@ -109,6 +109,15 @@ Follow these instructions to get up and running with this project.
   leaps to the right. Make a similar comparison between React and Mustache/Handlebars. Be aware of these spectrums of
   low-to-high tooling sophistication. Sometimes we need one tool, and sometimes we need the other. All options have their
   own strengths and weaknesses. Inform yourself the best you can!
+* Opening this project in Codespaces technically worked (yay!) but there are hiccups. 1) There was a VS Code notification
+  that the Gradle language server connection couldn't be made (or timed out, or something). After I ran `gradle run` from
+  the terminal, this issue was resolved and the Gradle integration was working; the Gradle tasks on the lefthand bar were
+  showing up. 2) The first `gradle run` tasks too 1 minute and 20 seconds. You can discount 5 seconds because of the sleep
+  statement in the program but over a minute is very long! The second `gradle run` was only 8 seconds (perfectly fine).
+  I'm using the default 2-core 4GB codespace configuration. Maybe 4GB is just too low for the combination of VS Code (headless
+  electron how does that work??) and Gradle (Java) and whatever other Codespace machinery is running. and 3) You need to
+  allow cookies in your browser from `vscode-cdn.net` otherwise an error notification shows up in VS Code with a message
+  about ServiceWorkers.
 
 
 ## Wish List
