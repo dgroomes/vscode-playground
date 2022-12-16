@@ -5,7 +5,8 @@
             "type": "java",
             "name": "run",
             "request": "launch",
-            "mainClass": "App"
+            "mainClass": "App",
+            "args": "I am a 'launch' configuration."
         }
     ]
 }
