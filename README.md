@@ -133,7 +133,12 @@ This is a list of things I wish to explore, answer and/or implement.
   I'm in a dev container project, the dev container might specify that VS Code extensions "A", "B", and "C" are installed.
   But I'm used to my special extension "Z" because it helps me with keyboard shortcuts or accessility or something. Can
   I use "Z" still without editing the shared dev containers config file?
-* [ ] How are project files shared between my host system and the dev container? I read somewhere that dev containers don't
+* [x] DONE (Partially answered. The [Dev Containers spec explains](https://containers.dev/implementors/spec/#mounts)
+  > "Source code is stored outside of the container so that a developer’s in-flight edits can be extracted, or a new
+  > container created in the event a container no longer starts."
+  
+  So, while it doesn't describe the implementation details, I'm satisfied knowing the "what" and "why" and not "how")
+  How are project files shared between my host system and the dev container? I read somewhere that dev containers don't
   use bind mounts, only volumes. Do my file edits in the dev container show up on my host? Or not? And when I have to
   rebuild the dev container, for example to add a new extension, then what happens to my project state, like my file edits?
 * [x] NOT POSSIBLE (The Gradle VS Code extension supports Gradle tasks and project detection but when it comes to Kotlin
