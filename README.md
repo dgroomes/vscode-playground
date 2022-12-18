@@ -118,6 +118,12 @@ Follow these instructions to get up and running with this project.
   electron how does that work??) and Gradle (Java) and whatever other Codespace machinery is running. and 3) You need to
   allow cookies in your browser from `vscode-cdn.net` otherwise an error notification shows up in VS Code with a message
   about ServiceWorkers.
+* `File: New Untitled File` is an interesting and very different workflow for creating files. First, there is a perfectly
+  short keyboard shortcut for it: `Cmd + N`. Next, it brings you to a new empty file with "clickable source text as UI-controls"
+  content and you can click the "Select a language" text, then choose your language (I did Markdown for this case). Then
+  you can start coding/writing and you don't even have to name the file until you save (which is an interesting trade-off
+  to help you focus on content instead of front-loading the naming task). I'm concerned about going back to a "I must save
+  manually all the time workflow" compared to Intellij where all files are saved automatically. But this is interesting.
 
 
 ## Wish List
@@ -129,7 +135,9 @@ This is a list of things I wish to explore, answer and/or implement.
 * [ ] Get a Go program working
 * [ ] Get a Python program working (which build tool?)
 * [ ] Get an NPM-based TypeScript program working
-* [ ] What is the interop story between a dev container-powered VS Code experience and "local" extensions? For example, when
+* [x] DONE (It's a bit awkward, but I think that's just the nature of having a split-brain editor/IDE. If some of the IDE
+  is on your host/computer and some is on a remote host, then it's complicated by nature. There is a [good explanation in the docs](https://code.visualstudio.com/docs/devcontainers/containers#_managing-extensions))
+  What is the interop story between a dev container-powered VS Code experience and "local" extensions? For example, when
   I'm in a dev container project, the dev container might specify that VS Code extensions "A", "B", and "C" are installed.
   But I'm used to my special extension "Z" because it helps me with keyboard shortcuts or accessility or something. Can
   I use "Z" still without editing the shared dev containers config file?
