@@ -147,7 +147,10 @@ This is a list of things I wish to explore, answer and/or implement.
   highlighting in the `settings.gradle.kts` or `build.gradle.kts` files even though I'm getting the Gradle tool button
   thing and can run Gradle tasks like "run" successfully. So the Gradle VS Code is partly working. I need syntax
   highlighting and autocomplete for `build.gradle.kts`.
-* [ ] Can I globally configure preferences in VS Code? I want word wrap always off, for example.
+* [x] DONE (It is called "User Settings" and it's backed by a JSON file at `$HOME/Library/Application\ Support/Code/User/settings.json`
+  Also, there is an interesting override specific to Markdown that turned word wrap on. I want that off. The raw markdown
+  is source code. I'm happy that the *rendered* markdown wraps).
+  Can I globally configure preferences in VS Code? I want word wrap always off, for example.
 * [ ] Create a launch configuration (I have a working one but I haven't explored the feature enough).
 * [ ] Describe how to run the project in debug mode.
 
