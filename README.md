@@ -44,7 +44,7 @@ Follow these instructions to get up and running with this project.
 1. Run the Java program
    * Execute the following command from the built-in VS Code terminal.
    * ```shell
-     gradle run --args "hello there!"
+     gradle -p java run --args "hello there!"
      ```
    * Gradle will compile and run the program using the JDK installed in the dev container. Altogether, it should look
      something like this.
@@ -110,11 +110,14 @@ Follow these instructions to get up and running with this project.
   low-to-high tooling sophistication. Sometimes we need one tool, and sometimes we need the other. All options have their
   own strengths and weaknesses. Inform yourself the best you can!
 * Opening this project in Codespaces technically worked (yay!) but there are hiccups. 1) There was a VS Code notification
-  that the Gradle language server connection couldn't be made (or timed out, or something). After I ran `gradle run` from
-  the terminal, this issue was resolved and the Gradle integration was working; the Gradle tasks on the lefthand bar were
-  showing up. 2) The first `gradle run` tasks too 1 minute and 20 seconds. You can discount 5 seconds because of the sleep
-  statement in the program but over a minute is very long! The second `gradle run` was only 8 seconds (perfectly fine).
-  I'm using the default 2-core 4GB codespace configuration. Maybe 4GB is just too low for the combination of VS Code (headless
+  that the Gradle extension failed.
+  > The Gradle client was unable to connect. Try re-connecting.
+
+  (Note this issue also happens in the dev container when running locally). After I ran `gradle run` from the terminal,
+  this issue was resolved and the Gradle integration was working; the Gradle tasks on the lefthand bar were showing up.
+  2) The first `gradle run` tasks too 1 minute and 20 seconds. You can discount 5 seconds because of the sleep statement
+  in the program but over a minute is very long! The second `gradle run` was only 8 seconds (perfectly fine). I'm using
+  the default 2-core 4GB codespace configuration. Maybe 4GB is just too low for the combination of VS Code (headless
   electron how does that work??) and Gradle (Java) and whatever other Codespace machinery is running. and 3) You need to
   allow cookies in your browser from `vscode-cdn.net` otherwise an error notification shows up in VS Code with a message
   about ServiceWorkers.
@@ -132,7 +135,10 @@ This is a list of things I wish to explore, answer and/or implement.
 
 * [x] DONE Get a dev container working
 * [x] DONE Get a Gradle-based Java program working
-* [ ] Get a Go program working
+* [ ] IN PROGRESS Get a Go program working
+  * IN PROGRESS First, get the Go toolchain installed in the dev container. I need to figure learn about dev container
+  "features".
+  * Write the program.
 * [ ] Get a Python program working (which build tool?)
 * [ ] Get an NPM-based TypeScript program working
 * [x] DONE (It's a bit awkward, but I think that's just the nature of having a split-brain editor/IDE. If some of the IDE
@@ -166,3 +172,11 @@ This is a list of things I wish to explore, answer and/or implement.
 ## Reference
 
 * [Visual Studio docs: *Java in Visual Studio Code*](https://code.visualstudio.com/docs/languages/java)
+* [The `Go` language Dev Container *feature*](https://github.com/devcontainers/features/tree/main/src/go)
+  * It's interesting that the Dev Container project (which is a *specification*) actually comes with an enormous amount
+  of implementation of the specification. For example, the above link is a *feature* (an implementation) for Go. There are
+  27 official features (count instances of `ghcr.io/devcontainers/features` on [the Features page](https://containers.dev/features)).
+  Usually specifications are backed by either third-party implementations or at least by an implementation that is not
+  branded the same as the specification. For example HTML/CSS/ECMAScript are specs and are implemented by the browser vendors
+  and by a long tail of other tooling. But by providing a spec and an exhaustive implementation, that's definitely one
+  way to boost the adoption of a project.

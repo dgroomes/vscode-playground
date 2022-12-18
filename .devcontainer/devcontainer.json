@@ -4,10 +4,17 @@
 	"name": "Java",
 	"image": "mcr.microsoft.com/devcontainers/java:0-17",
 	"features": {
-		"ghcr.io/devcontainers/features/java:1": {
-			"version": "none",
+
+		// The latest "java" Dev Container feature releases: https://github.com/devcontainers/features/pkgs/container/features%2Fjava
+		"ghcr.io/devcontainers/features/java:1.1.1": {
+			"version": "17",
 			"installMaven": "false",
 			"installGradle": "true"
+		},
+
+		// The latest "go" Dev Container feature releases: https://github.com/devcontainers/features/pkgs/container/features%2Fgo
+		"ghcr.io/devcontainers/features/go:1.1.2": {
+			"version": "1.19"
 		}
 	},
 

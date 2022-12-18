@@ -1,3 +1,6 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+
+    // Make sure that the "Gradle for Java" extensions detects the Gradle project in the `java/` directory.
+    "gradle.nestedProjects": ["java"]
 }
