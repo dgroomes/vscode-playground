@@ -25,7 +25,15 @@ This project is designed to be developed in VS Code where VS Code is attached to
 container, per convention, is defined in `.devcontainer/devcontainer.json`. I scaffolded the configuration file using the
 VS Code command "Dev Containers: Add Dev Container Configuration Files...".
 
-The project defines a toy Java program. It's built and executed using Gradle.
+The project defines example programs in various programming languages. By having a polyglot (multi-language) project,
+we can showcase the flexibility and power of the Dev Containers specification and implementation. Normally, it's up to the
+user to follow multiple sets of "Install toolchain XYZ ..." instructions to prepare their computer with a working development
+environment. Alternatively, it's up to a more experienced programmer like a library author or team lead to automate the
+development environment setup using long and fragile shell scripts. But with Dev Containers, the experience of the end-user
+programmer and the project author is easy. Dev Containers is actually built on top of many lengthy, variegated, shell
+scripts! For example, read the [Java `install.sh` script](https://github.com/devcontainers/features/blob/2af02c198adabacff30c400b0bfcad972ce5abcc/src/java/install.sh)
+or the [Python one](https://github.com/devcontainers/features/blob/2af02c198adabacff30c400b0bfcad972ce5abcc/src/python/install.sh).
+Try to remember that Dev Containers is a layer of abstraction over these gnarly install scripts.
 
 
 ## Instructions
@@ -41,15 +49,15 @@ Follow these instructions to get up and running with this project.
      that's running in the dev container.
    * Now you are ready to start building, running and developing the project because you have a working development
      environment. You don't have to worry about installing Java (OpenJDK) or Gradle.
-1. Run the Java program
+1. Build and run the example Java program
    * Execute the following command from the built-in VS Code terminal.
    * ```shell
-     gradle -p java run --args "hello there!"
+     gradle -p example-java run --args "hello there!"
      ```
    * Gradle will compile and run the program using the JDK installed in the dev container. Altogether, it should look
      something like this.
    * ```text
-     vscode ➜ /workspaces/vscode-playground (main ✗) $ gradle run --args "hello there!"
+     vscode ➜ /workspaces/vscode-playground (main ✗) $ gradle -p example-java run --args "hello there!"
      
      > Task :run
      Hello, World! I'm a Java program. I was passed 2 arguments. They are: [hello, there!]
@@ -58,6 +66,21 @@ Follow these instructions to get up and running with this project.
      BUILD SUCCESSFUL in 5s
      2 actionable tasks: 2 executed
      ```
+1. Build and run the example Go program
+   * Execute the following command from the build-in VS Code terminal.
+   * ```shell
+     (cd example-go; go run .)
+     ```
+   * The Go toolchain installed in the dev container builds and runs the program. Altogether, it should look something
+     like this:
+   * ```text
+     vscode ➜ /workspaces/vscode-playground (main ✗) $ (cd example-go; go run .)
+     "Don't communicate by sharing memory, share memory by communicating."
+     ```
+   * Note: the command executes in a subshell and `cd`s into the `example-go/` directory because `go run`, unlike most other
+     language toolchains, does not have a way to "specify a project in another directory". So we resort to temporarily
+     moving into that directory.
+
 
 
 ## Observations about Visual Studio Code (and Codespaces)
@@ -135,10 +158,10 @@ This is a list of things I wish to explore, answer and/or implement.
 
 * [x] DONE Get a dev container working
 * [x] DONE Get a Gradle-based Java program working
-* [ ] IN PROGRESS Get a Go program working
-  * IN PROGRESS First, get the Go toolchain installed in the dev container. I need to figure learn about dev container
+* [x] DONE Get a Go program working
+  * DONE First, get the Go toolchain installed in the dev container. I need to figure learn about dev container
   "features".
-  * Write the program.
+  * DONE Write the program.
 * [ ] Get a Python program working (which build tool?)
 * [ ] Get an NPM-based TypeScript program working
 * [x] DONE (It's a bit awkward, but I think that's just the nature of having a split-brain editor/IDE. If some of the IDE
