@@ -162,6 +162,9 @@ Follow these instructions to get up and running with this project.
   to show the diff, then `F7` to cycle through the changes, and `F7` even crosses to the next file. Critically, during my
   diff review, I'll always find something to fix/improve and I just press `F4` which jumps to an editor tab at that line.
   I can't quite get the same effect in VS Code but at least I can cycle through the diff with `Next Change` (`Option + F5`).
+* Annoyingly, the keyboard shortcuts to open the sidebar/toolbar things like "Explorer", "Search", "Source Control", etc.
+  do not work to hide them. They keyboard shortcuts are not "show/hide" but rather a "show" only. I want to peek at my
+  changed files and then hide them again and I can't do that by staying on the keyboard. There has to be another way...
 
 
 ## Wish List
