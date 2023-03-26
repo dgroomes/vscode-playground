@@ -150,6 +150,18 @@ Follow these instructions to get up and running with this project.
   you can start coding/writing and you don't even have to name the file until you save (which is an interesting trade-off
   to help you focus on content instead of front-loading the naming task). I'm concerned about going back to a "I must save
   manually all the time workflow" compared to Intellij where all files are saved automatically. But this is interesting.
+* VS Code has "Outline" which is analogous to the "Structure" view in IntelliJ. The way I use this feature in Intellij
+  is mostly via the keyboard shortcut `Cmd + F12` which brings up the "Structure" view and then I use the arrow keys to
+  navigate the list of items. In VS Code, the keyboard shortcut is `Cmd + Shift + O` which brings up the "Outline" view
+  and then I use the arrow keys to navigate the list of items. (Another jaw dropping moment with GitHub Copilot. Copilot
+  auto-completed everything after "VS Code has 'Outline' which is ana". I didn't even write the whole word for "analogous").
+  Also, VS Code has the "just start typing" feature which filters down the list of items in the "Outline" view. Intellij
+  does this in even more contexts, but VS Code does it well.
+* One of my absolute killer feature differentiators that I use in Intellij is cycling through my diff at the speed of
+  sound. I do this with a keyboard shortcut to move focus to the VCS tab, then arrow keys to focus on a file, then `Cmd + D`
+  to show the diff, then `F7` to cycle through the changes, and `F7` even crosses to the next file. Critically, during my
+  diff review, I'll always find something to fix/improve and I just press `F4` which jumps to an editor tab at that line.
+  I can't quite get the same effect in VS Code but at least I can cycle through the diff with `Next Change` (`Option + F5`).
 
 
 ## Wish List
@@ -164,6 +176,7 @@ This is a list of things I wish to explore, answer and/or implement.
   * DONE Write the program.
 * [ ] Get a Python program working (which build tool?)
 * [ ] Get an NPM-based TypeScript program working
+* [ ] Get a Swift program working. Swift has a good backing of an official extension. See <https://www.swift.org/blog/vscode-extension/>.
 * [x] DONE (It's a bit awkward, but I think that's just the nature of having a split-brain editor/IDE. If some of the IDE
   is on your host/computer and some is on a remote host, then it's complicated by nature. There is a [good explanation in the docs](https://code.visualstudio.com/docs/devcontainers/containers#_managing-extensions))
   What is the interop story between a dev container-powered VS Code experience and "local" extensions? For example, when
