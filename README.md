@@ -179,7 +179,7 @@ This is a list of things I wish to explore, answer and/or implement.
   * DONE Write the program.
 * [ ] Get a Python program working (which build tool?)
 * [ ] Get an NPM-based TypeScript program working
-* [ ] Get a Swift program working. Swift has a good backing of an official extension. See <https://www.swift.org/blog/vscode-extension/>.
+* [ ] (Not possible right now. There is no official dev container "feature" for Swift right now) Get a Swift program working. Swift has a good backing of an official extension. See <https://www.swift.org/blog/vscode-extension/>.
 * [x] DONE (It's a bit awkward, but I think that's just the nature of having a split-brain editor/IDE. If some of the IDE
   is on your host/computer and some is on a remote host, then it's complicated by nature. There is a [good explanation in the docs](https://code.visualstudio.com/docs/devcontainers/containers#_managing-extensions))
   What is the interop story between a dev container-powered VS Code experience and "local" extensions? For example, when
