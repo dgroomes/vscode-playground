@@ -2,10 +2,6 @@
 
 📚 Learning and exploring Visual Studio Code (VS Code).
 
-> Code editing. **Redefined.** Free. Built on open source. Runs everywhere.
->
-> -- <cite>https://code.visualstudio.com/</cite>
-
 
 ## Overview
 
@@ -206,6 +202,10 @@ This is a list of things I wish to explore, answer and/or implement.
   Can I globally configure preferences in VS Code? I want word wrap always off, for example.
 * [ ] Create a launch configuration (I have a working one but I haven't explored the feature enough).
 * [ ] Describe how to run the project in debug mode.
+* [x] DONE Updates for 2024
+* [ ] Cursor? Document some observations about the controls and interaction of AI things like auto-completion, inline chat, etc.
+  I want to compress the workflow where possible, and get leverage out of the LLM-powered actions.
+* [x] DONE (they are in `~/Library/Application Support/Cursor/User/keybindings.json`) Where are keyboard shortcuts defined? Not in the same `settings.json` file right?
 
 
 ## Reference
