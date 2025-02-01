@@ -5,21 +5,24 @@
 
 ## Overview
 
-With this repository I am trying out Visual Studio Code (abbreviated "VS Code") in detail. Before, I have only used it
-for basic text editing but I would like to explore its many other features like [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview)
-and in particular [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers). In 2022, the [Development Containers](https://containers.dev/)
-specification and development user experience has blossomed inside VS Code. If I can use VS Code to get up and running
-with toolchains that I'm not familiar with like machine learning, C/C++/autoconf, Dart, Raspberry Pi, etc, then this makes
-me more likely to learn and experiment with those technologies.
-
-Please note: I still love Intellij.
+With this repository I am trying out Visual Studio Code (abbreviated "VS Code") in detail. In 2022/2023 I explored [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview)
+and my findings are reflected in this repo. In 2025, I'm coming back to get leverage out of VS Code forks, like Cursor,
+because the allure is too strong of an AI-enhanced workflow. IntelliJ hasn't caught up yet, so we're going to Cursor.
 
 
 ## Design
 
-This project is designed to be developed in VS Code where VS Code is attached to a project-specific dev container. The dev
-container, per convention, is defined in `.devcontainer/devcontainer.json`. I scaffolded the configuration file using the
-VS Code command "Dev Containers: Add Dev Container Configuration Files...".
+This project can be developed in a project-specific *dev container*. The dev container, per convention, is defined in
+`.devcontainer/devcontainer.json`. I scaffolded the configuration file using the VS Code command "Dev Containers: Add
+Dev Container Configuration Files...".
+
+---
+**NOTE:** I suggest NOT using Dev Containers in Cursor. It doesn't seem to be well- (or much at all) supported: <https://github.com/getcursor/cursor/issues/718>.
+And that's ok. We need to switch between tools depending on the use-case. I wish there were fewer tools in total, but it
+is what it is: IntelliJ for Java/Kotlin development, Cursor for the best AI-enchanced workflow, VS Code as a general-purpose
+and good default in many cases.
+
+---
 
 The project defines example programs in various programming languages. By having a polyglot (multi-language) project,
 we can showcase the flexibility and power of the Dev Containers specification and implementation. Normally, it's up to the
@@ -36,7 +39,7 @@ Try to remember that Dev Containers is a layer of abstraction over these gnarly 
 
 Follow these instructions to get up and running with this project.
 
-1. Attach VS Code to the dev container
+1. Attach VS Code to the dev container (skip this if you're using Cursor)
    * When you open VS Code in a project that contains a dev container configuration file (`.devcontainer/devcontainer.json`),
      VS Code will usefully prompt you with a notification like the following.
    * <img src="screenshots/reopen-in-containers-screenshot.png" alt="Folder contains a Dev Container configuration file. Reopen folder to develop in a container" width=500/>
@@ -79,7 +82,7 @@ Follow these instructions to get up and running with this project.
 
 
 
-## Observations about Visual Studio Code (and Codespaces)
+## Observations about Visual Studio Code (including Codespaces and Cursor)
 
 * I like VS Code's "launch configurations" (an analog to Intellij's "run configurations") for two reasons. 1) they are
   defined in JSON (and ostensibly I should version control them in Git?) and 2) they simply kick off a command in the
@@ -159,13 +162,28 @@ Follow these instructions to get up and running with this project.
   diff review, I'll always find something to fix/improve and I just press `F4` which jumps to an editor tab at that line.
   I can't quite get the same effect in VS Code but at least I can cycle through the diff with `Next Change` (`Option + F5`).
 * Annoyingly, the keyboard shortcuts to open the sidebar/toolbar things like "Explorer", "Search", "Source Control", etc.
-  do not work to hide them. They keyboard shortcuts are not "show/hide" but rather a "show" only. I want to peek at my
+  do not work to hide them. The keyboard shortcuts are not "show/hide" but rather a "show" only. I want to peek at my
   changed files and then hide them again and I can't do that by staying on the keyboard. There has to be another way...
+* Chords. `Cmd + R` brings puts you into a chorded mode where the editor is awaiting your next key press. One chord I use
+  is `Cmd + R, V` to open the preview pane for a Markdown file. Interesting! I don't dislike modal editors. It gives you
+  more "free airspace" for key combos but it does add a level of indirection/complexity. 
 
 
 ## Wish List
 
 This is a list of things I wish to explore, answer and/or implement.
+
+* [ ] Get a Python program working (which build tool?)
+* [ ] Get an NPM-based TypeScript program working
+* [ ] Create a launch configuration (I have a working one but I haven't explored the feature enough).
+* [ ] Describe how to run the project in debug mode.
+* [ ] IN PROGRESS Cursor? Document some observations about the controls and interaction of AI things like auto-completion, inline chat, etc.
+  I want to compress the workflow where possible, and get leverage out of the LLM-powered actions.
+   * DONE (fixed; had to subscribe to pro) Cursor doesn't have the Copilot-style auto-complate enabled by default. I think it's called Cursor Tab?
+* [ ] Explore .cursorrules files. And is there a more standard-based name for this type of context file?
+
+
+## Finished Wish List Items
 
 * [x] DONE Get a dev container working
 * [x] DONE Get a Gradle-based Java program working
@@ -173,9 +191,7 @@ This is a list of things I wish to explore, answer and/or implement.
   * DONE First, get the Go toolchain installed in the dev container. I need to figure learn about dev container
   "features".
   * DONE Write the program.
-* [ ] Get a Python program working (which build tool?)
-* [ ] Get an NPM-based TypeScript program working
-* [ ] (Not possible right now. There is no official dev container "feature" for Swift right now) Get a Swift program working. Swift has a good backing of an official extension. See <https://www.swift.org/blog/vscode-extension/>.
+* [ ] SKIP (Not possible right now. There is no official dev container "feature" for Swift right now) Get a Swift program working. Swift has a good backing of an official extension. See <https://www.swift.org/blog/vscode-extension/>.
 * [x] DONE (It's a bit awkward, but I think that's just the nature of having a split-brain editor/IDE. If some of the IDE
   is on your host/computer and some is on a remote host, then it's complicated by nature. There is a [good explanation in the docs](https://code.visualstudio.com/docs/devcontainers/containers#_managing-extensions))
   What is the interop story between a dev container-powered VS Code experience and "local" extensions? For example, when
@@ -200,11 +216,7 @@ This is a list of things I wish to explore, answer and/or implement.
   Also, there is an interesting override specific to Markdown that turned word wrap on. I want that off. The raw markdown
   is source code. I'm happy that the *rendered* markdown wraps).
   Can I globally configure preferences in VS Code? I want word wrap always off, for example.
-* [ ] Create a launch configuration (I have a working one but I haven't explored the feature enough).
-* [ ] Describe how to run the project in debug mode.
 * [x] DONE Updates for 2024
-* [ ] Cursor? Document some observations about the controls and interaction of AI things like auto-completion, inline chat, etc.
-  I want to compress the workflow where possible, and get leverage out of the LLM-powered actions.
 * [x] DONE (they are in `~/Library/Application Support/Cursor/User/keybindings.json`) Where are keyboard shortcuts defined? Not in the same `settings.json` file right?
 
 
