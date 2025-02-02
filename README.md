@@ -166,8 +166,10 @@ Follow these instructions to get up and running with this project.
   changed files and then hide them again and I can't do that by staying on the keyboard. There has to be another way...
 * Chords. `Cmd + R` brings puts you into a chorded mode where the editor is awaiting your next key press. One chord I use
   is `Cmd + R, V` to open the preview pane for a Markdown file. Interesting! I don't dislike modal editors. It gives you
-  more "free airspace" for key combos but it does add a level of indirection/complexity. 
-
+  more "free airspace" for key combos but it does add a level of indirection/complexity.
+* `Cmd + L` (AI Chat) and `Cmd + K` (AI Composer) are excellent for a compressed workflow. For `Cmd + L`, the default
+  behavior is to include the currently opened file in the context, and I like that, but sometimes you want a bare context,
+  so just press delete to clear that file from the context. Very compressed.
 
 ## Wish List
 
