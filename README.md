@@ -16,6 +16,7 @@ This project can be developed in a project-specific *dev container*. The dev con
 `.devcontainer/devcontainer.json`. I scaffolded the configuration file using the VS Code command "Dev Containers: Add
 Dev Container Configuration Files...".
 
+
 ---
 **NOTE:** I suggest NOT using Dev Containers in Cursor. It doesn't seem to be well- (or much at all) supported: <https://github.com/getcursor/cursor/issues/718>.
 And that's ok. We need to switch between tools depending on the use-case. I wish there were fewer tools in total, but it
@@ -79,7 +80,6 @@ Follow these instructions to get up and running with this project.
    * Note: the command executes in a subshell and `cd`s into the `example-go/` directory because `go run`, unlike most other
      language toolchains, does not have a way to "specify a project in another directory". So we resort to temporarily
      moving into that directory.
-
 
 
 ## Observations about Visual Studio Code (including Codespaces and Cursor)
@@ -177,10 +177,13 @@ This is a list of things I wish to explore, answer and/or implement.
 * [ ] Get an NPM-based TypeScript program working
 * [ ] Create a launch configuration (I have a working one but I haven't explored the feature enough).
 * [ ] Describe how to run the project in debug mode.
-* [ ] IN PROGRESS Cursor? Document some observations about the controls and interaction of AI things like auto-completion, inline chat, etc.
+* [x] DONE (I read the docs; I don't want to redescribe any of that for now) Cursor? Document some observations about the controls and interaction of AI things like auto-completion, inline chat, etc.
   I want to compress the workflow where possible, and get leverage out of the LLM-powered actions.
    * DONE (fixed; had to subscribe to pro) Cursor doesn't have the Copilot-style auto-complate enabled by default. I think it's called Cursor Tab?
-* [ ] Explore .cursorrules files. And is there a more standard-based name for this type of context file?
+* [x] DONE Explore Project Rules.
+   * I make a rule for my markdown/README files.
+* [ ] Set up a proxy so I can see the types of data coming/going from Cursor. Trying to get a feel for what actions use
+  up the quota.
 
 
 ## Finished Wish List Items
@@ -225,9 +228,9 @@ This is a list of things I wish to explore, answer and/or implement.
 * [Visual Studio docs: *Java in Visual Studio Code*](https://code.visualstudio.com/docs/languages/java)
 * [The `Go` language Dev Container *feature*](https://github.com/devcontainers/features/tree/main/src/go)
   * It's interesting that the Dev Container project (which is a *specification*) actually comes with an enormous amount
-  of implementation of the specification. For example, the above link is a *feature* (an implementation) for Go. There are
-  27 official features (count instances of `ghcr.io/devcontainers/features` on [the Features page](https://containers.dev/features)).
-  Usually specifications are backed by either third-party implementations or at least by an implementation that is not
-  branded the same as the specification. For example HTML/CSS/ECMAScript are specs and are implemented by the browser vendors
-  and by a long tail of other tooling. But by providing a spec and an exhaustive implementation, that's definitely one
-  way to boost the adoption of a project.
+    of implementation of the specification. For example, the above link is a *feature* (an implementation) for Go. There are
+    27 official features (count instances of `ghcr.io/devcontainers/features` on [the Features page](https://containers.dev/features)).
+    Usually specifications are backed by either third-party implementations or at least by an implementation that is not
+    branded the same as the specification. For example HTML/CSS/ECMAScript are specs and are implemented by the browser vendors
+    and by a long tail of other tooling. But by providing a spec and an exhaustive implementation, that's definitely one
+    way to boost the adoption of a project.

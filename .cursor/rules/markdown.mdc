@@ -1,0 +1,23 @@
+---
+description: My formatting and semantic conventions for Markdown files (especially the README.md)
+globs: *.md
+---
+
+# Markdown Conventions
+
+These conventions apply generally to Markdown files, but they especially apply to my [README.md](mdc:README.md) file. 
+This is a naive first attempt at codifying my rules.
+
+
+## Formatting Rules
+
+- Section headers: Use H2 (`##`) with simple text in title case
+- Section spacing: Double newlines between the end of a section and the beginning of another section
+- Code Blocks: Specifically marked with language identifiers (shell for commands, text for output)
+- Line length: target around 120 characters. Overflow for long words, URLs, etc.
+- List items: indented with 2 spaces. Use asterisks not hyphens.
+
+
+## Wish List Conventions
+
+- DONE and SKIPPED tasks should eventually be moved out of the "Wish List" section and into a "Finished Wish List Items" section
